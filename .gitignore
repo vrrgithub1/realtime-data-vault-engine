@@ -1,0 +1,4 @@
+*.sh
+*.sh
+.venv
+__pycache__/
