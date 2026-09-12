@@ -5,67 +5,49 @@ An enterprise-grade, end-to-end real-time data engineering pipeline built with *
 ## Architecture Overview
 
 ```mermaid
-graph TB
-    subgraph layer1["📊 Event Streaming"]
-        Producer["Trade Event Producer<br/>(Python)"]
+flowchart TD
+    %% Custom Styling
+    classDef producer fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff
+    classDef broker fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#fff
+    classDef ingestion fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#fff
+    classDef raw fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff
+    classDef dv fill:#0f172a,stroke:#eab308,stroke-width:2px,color:#fff
+    classDef mart fill:#0f172a,stroke:#22c55e,stroke-width:2px,color:#fff
+    classDef ai fill:#1e293b,stroke:#ec4899,stroke-width:2px,color:#fff
+    classDef cicd fill:#1e293b,stroke:#64748b,stroke-dasharray: 5 5,color:#fff
+
+    %% Event Streaming & Ingestion
+    subgraph StreamLayer ["1. Streaming & Ingestion"]
+        P["Trade Event Producer<br/>(Python)"]:::producer -->|Stream Events| B["Redpanda / Kafka<br/>(Message Broker)"]:::broker
+        B -->|Consume| C["Polars Micro-Batch<br/>Consumer"]:::ingestion
     end
-    
-    subgraph layer2["🔄 Message Broker"]
-        Kafka["Redpanda / Kafka<br/>(Message Broker)"]
-    end
-    
-    subgraph layer3["⚙️ Data Ingestion"]
-        Consumer["Polars Micro-Batch<br/>Consumer"]
-    end
-    
-    subgraph snowflake["❄️ Snowflake Data Platform"]
-        subgraph raw["Raw Data"]
-            Snowflake_Raw["Snowflake RAW<br/>(Raw Layer)"]
+
+    %% Snowflake Platform
+    subgraph Snowflake ["2. Snowflake Data Platform (REALTIME_DV_DB)"]
+        C -->|Load JSON| RAW["RAW.RAW_FINANCIAL_TRADES"]:::raw
+        
+        subgraph Vault ["Data Vault 2.0 (VAULT)"]
+            RAW -->|dbt stage & hash| STG["stg_financial_trades"]:::raw
+            STG --> HUBS["Hubs<br/>(HUB_TRADE / HUB_ACCOUNT)"]:::dv
+            STG --> LINKS["Links<br/>(LINK_TRADE_ACCOUNT)"]:::dv
+            STG --> SATS["Satellites<br/>(SAT_TRADE_DETAILS)"]:::dv
         end
         
-        subgraph vault["🔧 Data Vault 2.0"]
-            Hubs["🏠 Hubs<br/>HUB_TRADE<br/>HUB_ACCOUNT"]
-            Links["🔗 Links<br/>LINK_TRADE_ACCOUNT"]
-            Sats["🛰️ Satellites<br/>SAT_TRADE_DETAILS"]
-        end
-        
-        subgraph marts["⭐ Star Schema Marts"]
-            Dim["📈 dim_account"]
-            Fact["📊 fact_trades"]
+        subgraph Marts ["Star Schema Marts (MARTS)"]
+            HUBS -->|account_id| DIM["dim_account"]:::mart
+            HUBS -->|trade_id| FACT["fact_trades"]:::mart
+            LINKS -->|hk_trade_account| FACT
+            SATS -->|trade metrics| FACT
         end
     end
-    
-    subgraph layer7["🤖 AI Query Engine"]
-        AI["LangChain AI Agent<br/>(Natural Language Queries)"]
+
+    %% Downstream & CI/CD
+    subgraph AI ["3. Consumption Layer"]
+        DIM --> AGENT["LangChain AI Agent<br/>(Text-to-SQL Analytics)"]:::ai
+        FACT --> AGENT
     end
-    
-    CI["🚀 GitHub Actions CI/CD"]
-    
-    Producer -->|Stream Events| Kafka
-    Kafka -->|Consume| Consumer
-    Consumer -->|Load| Snowflake_Raw
-    Snowflake_Raw --> Hubs
-    Snowflake_Raw --> Links
-    Snowflake_Raw --> Sats
-    Hubs --> Dim
-    Links --> Dim
-    Sats --> Dim
-    Hubs --> Fact
-    Links --> Fact
-    Sats --> Fact
-    snowflake --> AI
-    
-    CI -.->|Automate| snowflake
-    
-    style layer1 fill:#e1f5ff
-    style layer2 fill:#fff3e0
-    style layer3 fill:#f3e5f5
-    style raw fill:#e0f2f1
-    style vault fill:#fff9c4
-    style marts fill:#f1f8e9
-    style layer7 fill:#fce4ec
-    style snowflake fill:#f0f4c3
-    style CI fill:#ede7f6
+
+    CICD["GitHub Actions CI/CD<br/>(dbt run & dbt test)"]:::cicd -.-|Automates Transformations| Vault
 ```
 
 ## Key Components
