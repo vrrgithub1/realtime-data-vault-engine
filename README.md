@@ -6,34 +6,36 @@ An enterprise-grade, end-to-end real-time data engineering pipeline built with *
 
 ```mermaid
 graph TB
-    subgraph layer1["📊 Layer 1: Event Streaming"]
+    subgraph layer1["📊 Event Streaming"]
         Producer["Trade Event Producer<br/>(Python)"]
     end
     
-    subgraph layer2["🔄 Layer 2: Message Broker"]
+    subgraph layer2["🔄 Message Broker"]
         Kafka["Redpanda / Kafka<br/>(Message Broker)"]
     end
     
-    subgraph layer3["⚙️ Layer 3: Data Ingestion"]
+    subgraph layer3["⚙️ Data Ingestion"]
         Consumer["Polars Micro-Batch<br/>Consumer"]
     end
     
-    subgraph layer4["❄️ Layer 4: Raw Data"]
-        Snowflake_Raw["Snowflake RAW<br/>(Raw Layer)"]
+    subgraph snowflake["❄️ Snowflake Data Platform"]
+        subgraph raw["Raw Data"]
+            Snowflake_Raw["Snowflake RAW<br/>(Raw Layer)"]
+        end
+        
+        subgraph vault["🔧 Data Vault 2.0"]
+            Hubs["🏠 Hubs<br/>HUB_TRADE<br/>HUB_ACCOUNT"]
+            Links["🔗 Links<br/>LINK_TRADE_ACCOUNT"]
+            Sats["🛰️ Satellites<br/>SAT_TRADE_DETAILS"]
+        end
+        
+        subgraph marts["⭐ Star Schema Marts"]
+            Dim["📈 dim_account"]
+            Fact["📊 fact_trades"]
+        end
     end
     
-    subgraph layer5["🔧 Layer 5: Data Vault 2.0"]
-        Hubs["🏠 Hubs<br/>HUB_TRADE<br/>HUB_ACCOUNT"]
-        Links["🔗 Links<br/>LINK_TRADE_ACCOUNT"]
-        Sats["🛰️ Satellites<br/>SAT_TRADE_DETAILS"]
-    end
-    
-    subgraph layer6["⭐ Layer 6: Star Schema Marts"]
-        Dim["📈 dim_account"]
-        Fact["📊 fact_trades"]
-    end
-    
-    subgraph layer7["🤖 Layer 7: AI Query Engine"]
+    subgraph layer7["🤖 AI Query Engine"]
         AI["LangChain AI Agent<br/>(Natural Language Queries)"]
     end
     
@@ -51,20 +53,21 @@ graph TB
     Hubs --> Fact
     Links --> Fact
     Sats --> Fact
-    Dim --> AI
-    Fact --> AI
+    snowflake --> AI
     
-    CI -.->|Automate| Snowflake_Raw
+    CI -.->|Automate| snowflake
     
     style layer1 fill:#e1f5ff
     style layer2 fill:#fff3e0
     style layer3 fill:#f3e5f5
-    style layer4 fill:#e0f2f1
-    style layer5 fill:#fff9c4
-    style layer6 fill:#f1f8e9
+    style raw fill:#e0f2f1
+    style vault fill:#fff9c4
+    style marts fill:#f1f8e9
     style layer7 fill:#fce4ec
+    style snowflake fill:#f0f4c3
     style CI fill:#ede7f6
 ```
+
 ## Key Components
 
 1. **Event Streaming**: Python producer emitting streaming stock trade events to a Redpanda (Kafka) topic.
