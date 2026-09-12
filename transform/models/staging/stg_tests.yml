@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_financial_trades
+    columns:
+      - name: trade_id
+        tests:
+          - not_null
+      - name: hk_trade_id
+        tests:
+          - not_null
+          - unique

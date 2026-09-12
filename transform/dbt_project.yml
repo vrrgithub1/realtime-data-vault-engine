@@ -1,0 +1,28 @@
+name: 'transform'
+version: '1.0.0'
+config-version: 2
+
+profile: 'transform'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  transform:
+    staging:
+      +materialized: view
+      +schema: STAGING
+    vault:
+      +materialized: incremental
+      +schema: VAULT
+    marts:
+      +materialized: table
+      +schema: MARTS

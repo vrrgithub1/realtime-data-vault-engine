@@ -1,0 +1,776 @@
+[0m18:56:28.701514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795ddcc9bd30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795ddb5f8940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795ddb5f88b0>]}
+
+
+============================== 18:56:28.709497 | 6ce40aa1-fe82-4273-8eb0-c88eef92e95a ==============================
+[0m18:56:28.709497 [info ] [MainThread]: Running with dbt=1.12.4
+[0m18:56:28.712151 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt debug', 'debug': 'False', 'log_format': 'default', 'maximum_seed_size_mib': '1', 'log_cache_events': 'False', 'empty': 'None', 'log_path': 'logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'cache_selected_only': 'False', 'quiet': 'False', 'write_json': 'True', 'version_check': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'hints_enabled': 'True', 'profiles_dir': '/home/vrajadur/.dbt', 'fail_fast': 'False', 'static_parser': 'True', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'target_path': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False'}
+[0m18:56:28.751104 [info ] [MainThread]: dbt version: 1.12.4
+[0m18:56:28.753563 [info ] [MainThread]: python version: 3.10.21
+[0m18:56:28.755709 [info ] [MainThread]: python path: /home/vrajadur/miniconda3/envs/realtime-vault-u/bin/python3.10
+[0m18:56:28.758202 [info ] [MainThread]: os info: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m18:56:28.797901 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.databricks'
+[0m18:56:28.812654 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.postgres'
+[0m18:56:28.825764 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.postgres'
+[0m18:56:30.554913 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m18:56:30.556874 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m18:56:30.558620 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m18:56:30.751301 [info ] [MainThread]: Using profiles dir at /home/vrajadur/.dbt
+[0m18:56:30.753537 [info ] [MainThread]: Using profiles.yml file at /home/vrajadur/.dbt/profiles.yml
+[0m18:56:30.755244 [info ] [MainThread]: Using dbt_project.yml file at /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/dbt_project.yml
+[0m18:56:30.762596 [info ] [MainThread]: Configuration:
+[0m18:56:30.765148 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m18:56:30.767813 [info ] [MainThread]:   dbt_project.yml file [[31mERROR invalid[0m]
+[0m18:56:30.770554 [info ] [MainThread]: Required dependencies:
+[0m18:56:30.772830 [debug] [MainThread]: Executing "git --help"
+[0m18:56:30.785492 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:56:30.788182 [debug] [MainThread]: STDERR: "b''"
+[0m18:56:30.790433 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:56:30.792503 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m18:56:30.794563 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m18:56:30.797983 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "databricks_data_vault_engine", target "dev" invalid: Runtime Error
+    Could not find adapter type databricks!
+
+Runtime Error
+  Credentials in profile "postgres_data_vault_engine", target "dev" invalid: Runtime Error
+    Could not find adapter type postgres!
+
+Runtime Error
+  Credentials in profile "quant_vault_ai_profile", target "dev" invalid: Runtime Error
+    Could not find adapter type postgres!
+
+
+[0m18:56:30.800658 [info ] [MainThread]: Project loading failed for the following reason:
+Runtime Error
+  dbt_project.yml does not parse to a dictionary
+
+
+[0m18:56:30.804798 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 2.235341, "process_in_blocks": "524177", "process_kernel_time": 1.98349, "process_mem_max_rss": "209704", "process_out_blocks": "8", "process_user_time": 4.297562}
+[0m18:56:30.808289 [debug] [MainThread]: Command `dbt debug` failed at 18:56:30.807959 after 2.24 seconds
+[0m18:56:30.810946 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795ddcc9bd30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795ddb7b1060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x795db00f8f10>]}
+[0m18:56:30.814599 [debug] [MainThread]: Flushing usage events
+[0m18:56:30.965140 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:10:24.662015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7805b946bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7805b7dc4a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7805b7dc49a0>]}
+
+
+============================== 19:10:24.667068 | 7c6c15c2-5f35-4f28-b7fb-aa067bc47177 ==============================
+[0m19:10:24.667068 [info ] [MainThread]: Running with dbt=1.12.4
+[0m19:10:24.669732 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'profiles_dir': '/home/vrajadur/.dbt', 'empty': 'None', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'debug': 'False', 'maximum_seed_size_mib': '1', 'partial_parse': 'True', 'hints_enabled': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'no_print': 'None', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'log_path': '/mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/logs', 'introspect': 'True', 'use_colors': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'target_path': 'None'}
+[0m19:10:24.694346 [info ] [MainThread]: dbt version: 1.12.4
+[0m19:10:24.696135 [info ] [MainThread]: python version: 3.10.21
+[0m19:10:24.697628 [info ] [MainThread]: python path: /home/vrajadur/miniconda3/envs/realtime-vault-u/bin/python3.10
+[0m19:10:24.699145 [info ] [MainThread]: os info: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m19:10:26.023068 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m19:10:26.024623 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m19:10:26.026025 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m19:10:26.182090 [info ] [MainThread]: Using profiles dir at /home/vrajadur/.dbt
+[0m19:10:26.183934 [info ] [MainThread]: Using profiles.yml file at /home/vrajadur/.dbt/profiles.yml
+[0m19:10:26.186257 [info ] [MainThread]: Using dbt_project.yml file at /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/dbt_project.yml
+[0m19:10:26.189347 [info ] [MainThread]: adapter type: snowflake
+[0m19:10:26.191422 [info ] [MainThread]: adapter version: 1.12.0
+[0m19:10:26.344877 [info ] [MainThread]: Configuration:
+[0m19:10:26.346844 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m19:10:26.348391 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m19:10:26.349843 [info ] [MainThread]: Required dependencies:
+[0m19:10:26.351162 [debug] [MainThread]: Executing "git --help"
+[0m19:10:26.356148 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:10:26.358177 [debug] [MainThread]: STDERR: "b''"
+[0m19:10:26.360289 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:10:26.362064 [info ] [MainThread]: Connection:
+[0m19:10:26.363557 [info ] [MainThread]:   account:  JCMPVLP-XXB33511
+[0m19:10:26.364780 [info ] [MainThread]:   user: vrajadur
+[0m19:10:26.366004 [info ] [MainThread]:   database: REALTIME_DV_DB
+[0m19:10:26.367233 [info ] [MainThread]:   warehouse: REALTIME_DV_WH
+[0m19:10:26.368918 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m19:10:26.371268 [info ] [MainThread]:   schema: STAGING
+[0m19:10:26.372958 [info ] [MainThread]:   authenticator: None
+[0m19:10:26.375653 [info ] [MainThread]:   oauth_client_id: None
+[0m19:10:26.377750 [info ] [MainThread]:   query_tag: None
+[0m19:10:26.379624 [info ] [MainThread]:   client_session_keep_alive: False
+[0m19:10:26.381198 [info ] [MainThread]:   host: None
+[0m19:10:26.382692 [info ] [MainThread]:   port: None
+[0m19:10:26.384133 [info ] [MainThread]:   proxy_host: None
+[0m19:10:26.385856 [info ] [MainThread]:   proxy_port: None
+[0m19:10:26.388301 [info ] [MainThread]:   protocol: None
+[0m19:10:26.390250 [info ] [MainThread]:   connect_retries: 1
+[0m19:10:26.392653 [info ] [MainThread]:   connect_timeout: None
+[0m19:10:26.394302 [info ] [MainThread]:   retry_on_database_errors: False
+[0m19:10:26.396461 [info ] [MainThread]:   retry_all: False
+[0m19:10:26.398356 [info ] [MainThread]:   insecure_mode: False
+[0m19:10:26.400131 [info ] [MainThread]:   reuse_connections: True
+[0m19:10:26.401950 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m19:10:26.404681 [info ] [MainThread]:   workload_identity_provider: None
+[0m19:10:26.406700 [info ] [MainThread]:   workload_identity_entra_resource: None
+[0m19:10:26.408839 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m19:10:26.411368 [info ] [MainThread]: Registered adapter: snowflake=1.12.0
+[0m19:10:26.580390 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m19:10:26.584409 [debug] [MainThread]: Using snowflake connection "debug"
+[0m19:10:26.587387 [debug] [MainThread]: On debug: select 1 as id
+[0m19:10:26.588964 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:10:26.596603 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m19:10:26.597951 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m19:10:26.599225 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m19:10:26.600692 [info ] [MainThread]: [31m1 check failed:[0m
+[0m19:10:26.602539 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  251001: Invalid account identifier: only letters, digits, '_', '-' and '.' (as a label separator) allowed; no slashes or backslashes
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m19:10:26.605825 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 2.0669217, "process_in_blocks": "524605", "process_kernel_time": 1.118622, "process_mem_max_rss": "213052", "process_out_blocks": "0", "process_user_time": 4.096249}
+[0m19:10:26.608045 [debug] [MainThread]: Command `dbt debug` failed at 19:10:26.607856 after 2.07 seconds
+[0m19:10:26.609601 [debug] [MainThread]: Connection 'debug' was left open.
+[0m19:10:26.610976 [debug] [MainThread]: On debug: No close available on handle
+[0m19:10:26.612343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7805b946bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7805b8be1a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7805b922ab00>]}
+[0m19:10:26.614036 [debug] [MainThread]: Flushing usage events
+[0m19:10:26.786463 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:13:10.310532 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc90d3a7dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc90bcfca30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc90bcfc9d0>]}
+
+
+============================== 19:13:10.315646 | c0d9767c-177d-4017-a822-ad3e0b018195 ==============================
+[0m19:13:10.315646 [info ] [MainThread]: Running with dbt=1.12.4
+[0m19:13:10.317320 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'cache_selected_only': 'False', 'quiet': 'False', 'partial_parse': 'True', 'static_parser': 'True', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'empty': 'None', 'invocation_command': 'dbt debug', 'log_cache_events': 'False', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'warn_error': 'None', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'write_json': 'True', 'use_colors': 'True', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'profiles_dir': '/home/vrajadur/.dbt', 'version_check': 'True', 'log_path': '/mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/logs', 'hints_enabled': 'True', 'log_format': 'default'}
+[0m19:13:10.342539 [info ] [MainThread]: dbt version: 1.12.4
+[0m19:13:10.344687 [info ] [MainThread]: python version: 3.10.21
+[0m19:13:10.346639 [info ] [MainThread]: python path: /home/vrajadur/miniconda3/envs/realtime-vault-u/bin/python3.10
+[0m19:13:10.348661 [info ] [MainThread]: os info: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m19:13:11.835458 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m19:13:11.837398 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m19:13:11.840016 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m19:13:12.009371 [info ] [MainThread]: Using profiles dir at /home/vrajadur/.dbt
+[0m19:13:12.011771 [info ] [MainThread]: Using profiles.yml file at /home/vrajadur/.dbt/profiles.yml
+[0m19:13:12.013879 [info ] [MainThread]: Using dbt_project.yml file at /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/dbt_project.yml
+[0m19:13:12.016750 [info ] [MainThread]: adapter type: snowflake
+[0m19:13:12.018918 [info ] [MainThread]: adapter version: 1.12.0
+[0m19:13:12.174224 [info ] [MainThread]: Configuration:
+[0m19:13:12.176330 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m19:13:12.178038 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m19:13:12.179731 [info ] [MainThread]: Required dependencies:
+[0m19:13:12.181270 [debug] [MainThread]: Executing "git --help"
+[0m19:13:12.185845 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:13:12.188301 [debug] [MainThread]: STDERR: "b''"
+[0m19:13:12.191820 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:13:12.193859 [info ] [MainThread]: Connection:
+[0m19:13:12.195901 [info ] [MainThread]:   account: JCMPVLP-XXB33511
+[0m19:13:12.197599 [info ] [MainThread]:   user: vrajadur
+[0m19:13:12.199241 [info ] [MainThread]:   database: REALTIME_DV_DB
+[0m19:13:12.200781 [info ] [MainThread]:   warehouse: REALTIME_DV_WH
+[0m19:13:12.202148 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m19:13:12.203448 [info ] [MainThread]:   schema: STAGING
+[0m19:13:12.204809 [info ] [MainThread]:   authenticator: None
+[0m19:13:12.206648 [info ] [MainThread]:   oauth_client_id: None
+[0m19:13:12.208789 [info ] [MainThread]:   query_tag: None
+[0m19:13:12.210453 [info ] [MainThread]:   client_session_keep_alive: False
+[0m19:13:12.213712 [info ] [MainThread]:   host: None
+[0m19:13:12.215744 [info ] [MainThread]:   port: None
+[0m19:13:12.217381 [info ] [MainThread]:   proxy_host: None
+[0m19:13:12.218931 [info ] [MainThread]:   proxy_port: None
+[0m19:13:12.220431 [info ] [MainThread]:   protocol: None
+[0m19:13:12.221946 [info ] [MainThread]:   connect_retries: 1
+[0m19:13:12.223770 [info ] [MainThread]:   connect_timeout: None
+[0m19:13:12.226151 [info ] [MainThread]:   retry_on_database_errors: False
+[0m19:13:12.228400 [info ] [MainThread]:   retry_all: False
+[0m19:13:12.230991 [info ] [MainThread]:   insecure_mode: False
+[0m19:13:12.233010 [info ] [MainThread]:   reuse_connections: True
+[0m19:13:12.234731 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m19:13:12.236295 [info ] [MainThread]:   workload_identity_provider: None
+[0m19:13:12.237802 [info ] [MainThread]:   workload_identity_entra_resource: None
+[0m19:13:12.239910 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m19:13:12.242529 [info ] [MainThread]: Registered adapter: snowflake=1.12.0
+[0m19:13:12.392630 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m19:13:12.396814 [debug] [MainThread]: Using snowflake connection "debug"
+[0m19:13:12.398512 [debug] [MainThread]: On debug: select 1 as id
+[0m19:13:12.399915 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:13:13.841750 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.442 seconds
+[0m19:13:13.844501 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m19:13:13.846612 [info ] [MainThread]: [32mAll checks passed![0m
+[0m19:13:13.849570 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.6502683, "process_in_blocks": "527061", "process_kernel_time": 0.927703, "process_mem_max_rss": "225724", "process_out_blocks": "4928", "process_user_time": 4.146432}
+[0m19:13:13.851161 [debug] [MainThread]: Command `dbt debug` succeeded at 19:13:13.851032 after 3.65 seconds
+[0m19:13:13.852747 [debug] [MainThread]: Connection 'debug' was left open.
+[0m19:13:13.854224 [debug] [MainThread]: On debug: Close
+[0m19:13:14.155478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc90d3a7dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc8dc7afa90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc8ddcc5c00>]}
+[0m19:13:14.157793 [debug] [MainThread]: Flushing usage events
+[0m19:13:14.298247 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:15:22.031029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a40d8c47ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a40d74a8910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a40d74a88b0>]}
+
+
+============================== 19:15:22.038448 | 7aceac8e-b2b6-48c1-9e2d-b2f6b720ddd2 ==============================
+[0m19:15:22.038448 [info ] [MainThread]: Running with dbt=1.12.4
+[0m19:15:22.041619 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'use_colors': 'True', 'static_parser': 'True', 'printer_width': '80', 'invocation_command': 'dbt debug', 'maximum_seed_size_mib': '1', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'warn_error': 'None', 'hints_enabled': 'True', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/home/vrajadur/.dbt', 'log_path': '/mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/logs', 'indirect_selection': 'eager', 'target_path': 'None', 'introspect': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'partial_parse': 'True', 'quiet': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'empty': 'None', 'version_check': 'True', 'use_experimental_parser': 'False'}
+[0m19:15:22.076340 [info ] [MainThread]: dbt version: 1.12.4
+[0m19:15:22.079437 [info ] [MainThread]: python version: 3.10.21
+[0m19:15:22.082711 [info ] [MainThread]: python path: /home/vrajadur/miniconda3/envs/realtime-vault-u/bin/python3.10
+[0m19:15:22.086430 [info ] [MainThread]: os info: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m19:15:23.415510 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m19:15:23.417245 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m19:15:23.418779 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m19:15:23.535271 [info ] [MainThread]: Using profiles dir at /home/vrajadur/.dbt
+[0m19:15:23.537303 [info ] [MainThread]: Using profiles.yml file at /home/vrajadur/.dbt/profiles.yml
+[0m19:15:23.539382 [info ] [MainThread]: Using dbt_project.yml file at /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/dbt_project.yml
+[0m19:15:23.541958 [info ] [MainThread]: adapter type: snowflake
+[0m19:15:23.543793 [info ] [MainThread]: adapter version: 1.12.0
+[0m19:15:23.704105 [info ] [MainThread]: Configuration:
+[0m19:15:23.706479 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m19:15:23.708558 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m19:15:23.710418 [info ] [MainThread]: Required dependencies:
+[0m19:15:23.712504 [debug] [MainThread]: Executing "git --help"
+[0m19:15:23.721748 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:15:23.723803 [debug] [MainThread]: STDERR: "b''"
+[0m19:15:23.725596 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:15:23.727409 [info ] [MainThread]: Connection:
+[0m19:15:23.729361 [info ] [MainThread]:   account: JCMPVLP-XXB33511
+[0m19:15:23.730860 [info ] [MainThread]:   user: vrajadur
+[0m19:15:23.732328 [info ] [MainThread]:   database: REALTIME_DV_DB
+[0m19:15:23.733928 [info ] [MainThread]:   warehouse: REALTIME_DV_WH
+[0m19:15:23.735302 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m19:15:23.736681 [info ] [MainThread]:   schema: STAGING
+[0m19:15:23.738016 [info ] [MainThread]:   authenticator: None
+[0m19:15:23.739859 [info ] [MainThread]:   oauth_client_id: None
+[0m19:15:23.741949 [info ] [MainThread]:   query_tag: None
+[0m19:15:23.744048 [info ] [MainThread]:   client_session_keep_alive: False
+[0m19:15:23.746057 [info ] [MainThread]:   host: None
+[0m19:15:23.748195 [info ] [MainThread]:   port: None
+[0m19:15:23.750358 [info ] [MainThread]:   proxy_host: None
+[0m19:15:23.752537 [info ] [MainThread]:   proxy_port: None
+[0m19:15:23.754243 [info ] [MainThread]:   protocol: None
+[0m19:15:23.756168 [info ] [MainThread]:   connect_retries: 1
+[0m19:15:23.758736 [info ] [MainThread]:   connect_timeout: None
+[0m19:15:23.760678 [info ] [MainThread]:   retry_on_database_errors: False
+[0m19:15:23.763442 [info ] [MainThread]:   retry_all: False
+[0m19:15:23.766122 [info ] [MainThread]:   insecure_mode: False
+[0m19:15:23.767955 [info ] [MainThread]:   reuse_connections: True
+[0m19:15:23.769563 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m19:15:23.771158 [info ] [MainThread]:   workload_identity_provider: None
+[0m19:15:23.773353 [info ] [MainThread]:   workload_identity_entra_resource: None
+[0m19:15:23.775593 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m19:15:23.777940 [info ] [MainThread]: Registered adapter: snowflake=1.12.0
+[0m19:15:23.947255 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m19:15:23.950531 [debug] [MainThread]: Using snowflake connection "debug"
+[0m19:15:23.952035 [debug] [MainThread]: On debug: select 1 as id
+[0m19:15:23.953478 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:15:25.242455 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.289 seconds
+[0m19:15:25.245264 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m19:15:25.247502 [info ] [MainThread]: [32mAll checks passed![0m
+[0m19:15:25.251799 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.435321, "process_in_blocks": "527367", "process_kernel_time": 0.6741, "process_mem_max_rss": "225452", "process_out_blocks": "4928", "process_user_time": 4.430976}
+[0m19:15:25.254174 [debug] [MainThread]: Command `dbt debug` succeeded at 19:15:25.253973 after 3.44 seconds
+[0m19:15:25.257547 [debug] [MainThread]: Connection 'debug' was left open.
+[0m19:15:25.260045 [debug] [MainThread]: On debug: Close
+[0m19:15:25.649270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a40d8c47ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a40ac18ff40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a40ad63dae0>]}
+[0m19:15:25.652176 [debug] [MainThread]: Flushing usage events
+[0m19:15:26.142735 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:21:21.460741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa59dfb3cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa59dd6d8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa59c95dc00>]}
+
+
+============================== 19:21:21.472771 | c444bf56-db92-483b-b0c7-248bd8a2d515 ==============================
+[0m19:21:21.472771 [info ] [MainThread]: Running with dbt=1.12.4
+[0m19:21:21.476592 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/home/vrajadur/.dbt', 'partial_parse': 'True', 'cache_selected_only': 'False', 'hints_enabled': 'True', 'maximum_seed_size_mib': '1', 'indirect_selection': 'eager', 'static_parser': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'printer_width': '80', 'target_path': 'None', 'use_colors': 'True', 'no_print': 'None', 'log_path': '/mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/logs', 'version_check': 'True', 'fail_fast': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'debug': 'False', 'write_json': 'True', 'log_format': 'default', 'introspect': 'True', 'empty': 'False'}
+[0m19:21:22.542344 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m19:21:22.546156 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m19:21:22.549053 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m19:21:22.868023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa59cd9b190>]}
+[0m19:21:22.949773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa59d6f6080>]}
+[0m19:21:22.952797 [info ] [MainThread]: Registered adapter: snowflake=1.12.0
+[0m19:21:23.113037 [debug] [MainThread]: checksum: 76e9f3de2815e4bbff53f790d6eafe9f8bf5540389b5c49f4182a44d3e6ceb64, vars: {}, profile: transform, target: dev, version: 1.12.4
+[0m19:21:23.117668 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:21:23.119075 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa56d1ac9d0>]}
+[0m19:21:25.214302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa56cb5db70>]}
+[0m19:21:25.429416 [debug] [MainThread]: Wrote artifact WritableManifest to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/manifest.json
+[0m19:21:25.441790 [debug] [MainThread]: Wrote artifact SemanticManifest to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/semantic_manifest.json
+[0m19:21:25.483265 [debug] [MainThread]: Wrote artifact OsiDocument to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/osi_document.json
+[0m19:21:25.507393 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa5573b6290>]}
+[0m19:21:25.509475 [info ] [MainThread]: Found 5 models, 1 source, 545 macros
+[0m19:21:25.511570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa5573b4070>]}
+[0m19:21:25.516571 [info ] [MainThread]: 
+[0m19:21:25.519633 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:21:25.522828 [info ] [MainThread]: 
+[0m19:21:25.526648 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m19:21:25.541823 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_REALTIME_DV_DB'
+[0m19:21:25.543127 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_REALTIME_DV_DB'
+[0m19:21:25.569501 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB"
+[0m19:21:25.570452 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB"
+[0m19:21:25.572711 [debug] [ThreadPool]: On list_REALTIME_DV_DB: show terse schemas in database REALTIME_DV_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB"} */
+[0m19:21:25.575611 [debug] [ThreadPool]: On list_REALTIME_DV_DB: show terse schemas in database REALTIME_DV_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB"} */
+[0m19:21:25.578445 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:21:25.582449 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:21:27.060442 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.482 seconds
+[0m19:21:27.062370 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.480 seconds
+[0m19:21:27.072879 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_REALTIME_DV_DB, now create_REALTIME_DV_DB_STAGING_STAGING)
+[0m19:21:27.074105 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_REALTIME_DV_DB, now create_REALTIME_DV_DB_STAGING_VAULT)
+[0m19:21:27.076578 [debug] [ThreadPool]: Creating schema "database: "REALTIME_DV_DB"
+schema: "STAGING_STAGING"
+"
+[0m19:21:27.079792 [debug] [ThreadPool]: Creating schema "database: "REALTIME_DV_DB"
+schema: "STAGING_VAULT"
+"
+[0m19:21:27.088926 [debug] [ThreadPool]: Using snowflake connection "create_REALTIME_DV_DB_STAGING_STAGING"
+[0m19:21:27.092448 [debug] [ThreadPool]: Using snowflake connection "create_REALTIME_DV_DB_STAGING_VAULT"
+[0m19:21:27.094653 [debug] [ThreadPool]: On create_REALTIME_DV_DB_STAGING_STAGING: create schema if not exists REALTIME_DV_DB.STAGING_STAGING
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "create_REALTIME_DV_DB_STAGING_STAGING"} */
+[0m19:21:27.097684 [debug] [ThreadPool]: On create_REALTIME_DV_DB_STAGING_VAULT: create schema if not exists REALTIME_DV_DB.STAGING_VAULT
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "create_REALTIME_DV_DB_STAGING_VAULT"} */
+[0m19:21:27.301859 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.199 seconds
+[0m19:21:27.357991 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.258 seconds
+[0m19:21:27.363061 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_REALTIME_DV_DB_STAGING_STAGING, now list_REALTIME_DV_DB_STAGING_STAGING)
+[0m19:21:27.364695 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_REALTIME_DV_DB_STAGING_VAULT, now list_REALTIME_DV_DB_STAGING_VAULT)
+[0m19:21:27.384135 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_STAGING"
+[0m19:21:27.386388 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_VAULT"
+[0m19:21:27.388212 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_STAGING: show objects in REALTIME_DV_DB.STAGING_STAGING
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_STAGING"} */;
+[0m19:21:27.389888 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_VAULT: show objects in REALTIME_DV_DB.STAGING_VAULT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_VAULT"} */;
+[0m19:21:27.626129 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.232 seconds
+[0m19:21:27.641961 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_VAULT"
+[0m19:21:27.645272 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_VAULT: show user functions in REALTIME_DV_DB.STAGING_VAULT
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_VAULT"} */
+[0m19:21:27.756881 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.365 seconds
+[0m19:21:27.770866 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_STAGING"
+[0m19:21:27.774431 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_STAGING: show user functions in REALTIME_DV_DB.STAGING_STAGING
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_STAGING"} */
+[0m19:21:27.847027 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.198 seconds
+[0m19:21:28.110778 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.330 seconds
+[0m19:21:28.115830 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa56cb63100>]}
+[0m19:21:28.124268 [debug] [Thread-2 (]: Began running node model.transform.stg_financial_trades
+[0m19:21:28.126157 [info ] [Thread-2 (]: 1 of 5 START sql view model STAGING_STAGING.stg_financial_trades ............... [RUN]
+[0m19:21:28.127802 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_REALTIME_DV_DB_STAGING_STAGING, now model.transform.stg_financial_trades)
+[0m19:21:28.130296 [debug] [Thread-2 (]: Began compiling node model.transform.stg_financial_trades
+[0m19:21:28.139893 [debug] [Thread-2 (]: Writing injected SQL for node "model.transform.stg_financial_trades"
+[0m19:21:28.166876 [debug] [Thread-2 (]: Began executing node model.transform.stg_financial_trades
+[0m19:21:28.221463 [debug] [Thread-2 (]: Writing runtime sql for node "model.transform.stg_financial_trades"
+[0m19:21:28.260877 [debug] [Thread-2 (]: Using snowflake connection "model.transform.stg_financial_trades"
+[0m19:21:28.264642 [debug] [Thread-2 (]: On model.transform.stg_financial_trades: create or replace   view REALTIME_DV_DB.STAGING_STAGING.stg_financial_trades
+  
+  
+  
+  
+  as (
+    WITH raw_trades AS (
+    SELECT 
+        PAYLOAD:trade_id::STRING          AS trade_id,
+        PAYLOAD:account_id::STRING        AS account_id,
+        PAYLOAD:symbol::STRING            AS symbol,
+        PAYLOAD:order_type::STRING        AS order_type,
+        PAYLOAD:quantity::INT             AS quantity,
+        PAYLOAD:price::NUMBER(10,2)       AS price,
+        PAYLOAD:trade_timestamp::TIMESTAMP_TZ AS trade_timestamp,
+        RECORD_SOURCE,
+        INGESTED_AT                       AS load_timestamp
+    FROM REALTIME_DV_DB.RAW.RAW_FINANCIAL_TRADES
+)
+
+SELECT
+    trade_id,
+    account_id,
+    
+    -- Data Vault 2.0 MD5 Hash Keys
+    MD5(UPPER(TRIM(trade_id)))                                         AS hk_trade_id,
+    MD5(UPPER(TRIM(account_id)))                                       AS hk_account_id,
+    MD5(CONCAT_WS(';', UPPER(TRIM(trade_id)), UPPER(TRIM(account_id)))) AS hk_trade_account,
+    
+    symbol,
+    order_type,
+    quantity,
+    price,
+    trade_timestamp,
+    
+    RECORD_SOURCE AS record_source,
+    load_timestamp
+FROM raw_trades
+  )
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.stg_financial_trades"} */;
+[0m19:21:29.189173 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.922 seconds
+[0m19:21:29.233750 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa59c95d030>]}
+[0m19:21:29.237106 [info ] [Thread-2 (]: 1 of 5 OK created sql view model STAGING_STAGING.stg_financial_trades .......... [[32mSUCCESS 1[0m in 1.10s]
+[0m19:21:29.240022 [debug] [Thread-2 (]: Finished running node model.transform.stg_financial_trades
+[0m19:21:29.244103 [debug] [Thread-4 (]: Began running node model.transform.hub_account
+[0m19:21:29.245182 [debug] [Thread-5 (]: Began running node model.transform.hub_trade
+[0m19:21:29.246433 [debug] [Thread-3 (]: Began running node model.transform.link_trade_account
+[0m19:21:29.247520 [debug] [Thread-2 (]: Began running node model.transform.sat_trade_details
+[0m19:21:29.249662 [info ] [Thread-4 (]: 2 of 5 START sql incremental model STAGING_VAULT.hub_account ................... [RUN]
+[0m19:21:29.252730 [info ] [Thread-5 (]: 3 of 5 START sql incremental model STAGING_VAULT.hub_trade ..................... [RUN]
+[0m19:21:29.255499 [info ] [Thread-3 (]: 4 of 5 START sql incremental model STAGING_VAULT.link_trade_account ............ [RUN]
+[0m19:21:29.259031 [info ] [Thread-2 (]: 5 of 5 START sql incremental model STAGING_VAULT.sat_trade_details ............. [RUN]
+[0m19:21:29.263303 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.transform.hub_account'
+[0m19:21:29.271186 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.transform.hub_trade'
+[0m19:21:29.275036 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_REALTIME_DV_DB_STAGING_VAULT, now model.transform.link_trade_account)
+[0m19:21:29.279024 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.transform.stg_financial_trades, now model.transform.sat_trade_details)
+[0m19:21:29.282786 [debug] [Thread-4 (]: Began compiling node model.transform.hub_account
+[0m19:21:29.285313 [debug] [Thread-5 (]: Began compiling node model.transform.hub_trade
+[0m19:21:29.288048 [debug] [Thread-3 (]: Began compiling node model.transform.link_trade_account
+[0m19:21:29.290779 [debug] [Thread-2 (]: Began compiling node model.transform.sat_trade_details
+[0m19:21:29.299020 [debug] [Thread-4 (]: Writing injected SQL for node "model.transform.hub_account"
+[0m19:21:29.304213 [debug] [Thread-5 (]: Writing injected SQL for node "model.transform.hub_trade"
+[0m19:21:29.309676 [debug] [Thread-3 (]: Writing injected SQL for node "model.transform.link_trade_account"
+[0m19:21:29.316663 [debug] [Thread-2 (]: Writing injected SQL for node "model.transform.sat_trade_details"
+[0m19:21:29.343019 [debug] [Thread-2 (]: Began executing node model.transform.sat_trade_details
+[0m19:21:29.344157 [debug] [Thread-5 (]: Began executing node model.transform.hub_trade
+[0m19:21:29.345206 [debug] [Thread-3 (]: Began executing node model.transform.link_trade_account
+[0m19:21:29.359072 [debug] [Thread-4 (]: Began executing node model.transform.hub_account
+[0m19:21:29.632726 [debug] [Thread-5 (]: Writing runtime sql for node "model.transform.hub_trade"
+[0m19:21:29.634623 [debug] [Thread-3 (]: Writing runtime sql for node "model.transform.link_trade_account"
+[0m19:21:29.640006 [debug] [Thread-2 (]: Writing runtime sql for node "model.transform.sat_trade_details"
+[0m19:21:29.628311 [debug] [Thread-4 (]: Writing runtime sql for node "model.transform.hub_account"
+[0m19:21:29.687227 [debug] [Thread-5 (]: Using snowflake connection "model.transform.hub_trade"
+[0m19:21:29.689475 [debug] [Thread-3 (]: Using snowflake connection "model.transform.link_trade_account"
+[0m19:21:29.691822 [debug] [Thread-2 (]: Using snowflake connection "model.transform.sat_trade_details"
+[0m19:21:29.695204 [debug] [Thread-5 (]: On model.transform.hub_trade: create or replace transient table REALTIME_DV_DB.STAGING_VAULT.hub_trade
+    
+    
+    
+    
+    
+
+    as (
+
+SELECT DISTINCT
+    hk_trade_id,
+    trade_id,
+    load_timestamp,
+    record_source
+FROM REALTIME_DV_DB.STAGING_STAGING.stg_financial_trades
+
+
+    )
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.hub_trade"} */;
+[0m19:21:29.697742 [debug] [Thread-4 (]: Using snowflake connection "model.transform.hub_account"
+[0m19:21:29.700411 [debug] [Thread-3 (]: On model.transform.link_trade_account: create or replace transient table REALTIME_DV_DB.STAGING_VAULT.link_trade_account
+    
+    
+    
+    
+    
+
+    as (
+
+SELECT DISTINCT
+    hk_trade_account,
+    hk_trade_id,
+    hk_account_id,
+    load_timestamp,
+    record_source
+FROM REALTIME_DV_DB.STAGING_STAGING.stg_financial_trades
+
+
+    )
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.link_trade_account"} */;
+[0m19:21:29.703259 [debug] [Thread-2 (]: On model.transform.sat_trade_details: create or replace transient table REALTIME_DV_DB.STAGING_VAULT.sat_trade_details
+    
+    
+    
+    
+    
+
+    as (
+
+SELECT
+    hk_trade_id,
+    load_timestamp,
+    symbol,
+    order_type,
+    quantity,
+    price,
+    trade_timestamp,
+    record_source
+FROM REALTIME_DV_DB.STAGING_STAGING.stg_financial_trades
+
+
+    )
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.sat_trade_details"} */;
+[0m19:21:29.706083 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m19:21:29.709088 [debug] [Thread-4 (]: On model.transform.hub_account: create or replace transient table REALTIME_DV_DB.STAGING_VAULT.hub_account
+    
+    
+    
+    
+    
+
+    as (
+
+SELECT DISTINCT
+    hk_account_id,
+    account_id,
+    load_timestamp,
+    record_source
+FROM REALTIME_DV_DB.STAGING_STAGING.stg_financial_trades
+
+
+    )
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.hub_account"} */;
+[0m19:21:29.725154 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m19:21:31.798835 [debug] [Thread-3 (]: SQL status: SUCCESS 80 in 2.087 seconds
+[0m19:21:31.817673 [debug] [Thread-3 (]: Applying DROP to: REALTIME_DV_DB.STAGING_VAULT.link_trade_account__dbt_tmp
+[0m19:21:31.833779 [debug] [Thread-3 (]: Using snowflake connection "model.transform.link_trade_account"
+[0m19:21:31.837110 [debug] [Thread-3 (]: On model.transform.link_trade_account: drop view if exists REALTIME_DV_DB.STAGING_VAULT.link_trade_account__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.link_trade_account"} */
+[0m19:21:31.855859 [debug] [Thread-5 (]: SQL status: SUCCESS 80 in 2.150 seconds
+[0m19:21:31.859826 [debug] [Thread-2 (]: SQL status: SUCCESS 80 in 2.143 seconds
+[0m19:21:31.865669 [debug] [Thread-5 (]: Applying DROP to: REALTIME_DV_DB.STAGING_VAULT.hub_trade__dbt_tmp
+[0m19:21:31.869123 [debug] [Thread-4 (]: SQL status: SUCCESS 65 in 2.144 seconds
+[0m19:21:31.876365 [debug] [Thread-2 (]: Applying DROP to: REALTIME_DV_DB.STAGING_VAULT.sat_trade_details__dbt_tmp
+[0m19:21:31.880851 [debug] [Thread-5 (]: Using snowflake connection "model.transform.hub_trade"
+[0m19:21:31.889146 [debug] [Thread-4 (]: Applying DROP to: REALTIME_DV_DB.STAGING_VAULT.hub_account__dbt_tmp
+[0m19:21:31.894276 [debug] [Thread-2 (]: Using snowflake connection "model.transform.sat_trade_details"
+[0m19:21:31.898557 [debug] [Thread-5 (]: On model.transform.hub_trade: drop view if exists REALTIME_DV_DB.STAGING_VAULT.hub_trade__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.hub_trade"} */
+[0m19:21:31.903629 [debug] [Thread-4 (]: Using snowflake connection "model.transform.hub_account"
+[0m19:21:31.906779 [debug] [Thread-2 (]: On model.transform.sat_trade_details: drop view if exists REALTIME_DV_DB.STAGING_VAULT.sat_trade_details__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.sat_trade_details"} */
+[0m19:21:31.915686 [debug] [Thread-4 (]: On model.transform.hub_account: drop view if exists REALTIME_DV_DB.STAGING_VAULT.hub_account__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.hub_account"} */
+[0m19:21:32.067973 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.158 seconds
+[0m19:21:32.069554 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.147 seconds
+[0m19:21:32.073116 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.154 seconds
+[0m19:21:32.081101 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa555f93940>]}
+[0m19:21:32.086548 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa555f932b0>]}
+[0m19:21:32.092362 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa5573efd30>]}
+[0m19:21:32.096226 [info ] [Thread-5 (]: 3 of 5 OK created sql incremental model STAGING_VAULT.hub_trade ................ [[32mSUCCESS 80[0m in 2.81s]
+[0m19:21:32.100021 [info ] [Thread-4 (]: 2 of 5 OK created sql incremental model STAGING_VAULT.hub_account .............. [[32mSUCCESS 65[0m in 2.82s]
+[0m19:21:32.102798 [info ] [Thread-2 (]: 5 of 5 OK created sql incremental model STAGING_VAULT.sat_trade_details ........ [[32mSUCCESS 80[0m in 2.81s]
+[0m19:21:32.106313 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.266 seconds
+[0m19:21:32.107960 [debug] [Thread-5 (]: Finished running node model.transform.hub_trade
+[0m19:21:32.111067 [debug] [Thread-4 (]: Finished running node model.transform.hub_account
+[0m19:21:32.114458 [debug] [Thread-2 (]: Finished running node model.transform.sat_trade_details
+[0m19:21:32.121521 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c444bf56-db92-483b-b0c7-248bd8a2d515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa554630310>]}
+[0m19:21:32.129621 [info ] [Thread-3 (]: 4 of 5 OK created sql incremental model STAGING_VAULT.link_trade_account ....... [[32mSUCCESS 80[0m in 2.85s]
+[0m19:21:32.134118 [debug] [Thread-3 (]: Finished running node model.transform.link_trade_account
+[0m19:21:32.139623 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:21:32.142273 [debug] [MainThread]: Connection 'model.transform.sat_trade_details' was left open.
+[0m19:21:32.144599 [debug] [MainThread]: On model.transform.sat_trade_details: Close
+[0m19:21:32.402788 [debug] [MainThread]: Connection 'model.transform.link_trade_account' was left open.
+[0m19:21:32.405262 [debug] [MainThread]: On model.transform.link_trade_account: Close
+[0m19:21:32.652495 [debug] [MainThread]: Connection 'model.transform.hub_account' was left open.
+[0m19:21:32.654662 [debug] [MainThread]: On model.transform.hub_account: Close
+[0m19:21:32.925396 [debug] [MainThread]: Connection 'model.transform.hub_trade' was left open.
+[0m19:21:32.927401 [debug] [MainThread]: On model.transform.hub_trade: Close
+[0m19:21:33.150778 [info ] [MainThread]: 
+[0m19:21:33.153466 [info ] [MainThread]: Finished running 4 incremental models, 1 view model in 0 hours 0 minutes and 7.62 seconds (7.62s).
+[0m19:21:33.157386 [debug] [MainThread]: Command end result
+[0m19:21:33.291915 [debug] [MainThread]: Wrote artifact WritableManifest to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/manifest.json
+[0m19:21:33.303047 [debug] [MainThread]: Wrote artifact SemanticManifest to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/semantic_manifest.json
+[0m19:21:33.311608 [debug] [MainThread]: Wrote artifact OsiDocument to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/osi_document.json
+[0m19:21:33.331479 [debug] [MainThread]: Wrote artifact RunExecutionResult to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/run_results.json
+[0m19:21:33.334045 [info ] [MainThread]: 
+[0m19:21:33.337127 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:21:33.339581 [info ] [MainThread]: 
+[0m19:21:33.342230 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+[0m19:21:33.349784 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 12.01701, "process_in_blocks": "5930", "process_kernel_time": 0.977548, "process_mem_max_rss": "247540", "process_out_blocks": "9840", "process_user_time": 8.056759}
+[0m19:21:33.354141 [debug] [MainThread]: Command `dbt run` succeeded at 19:21:33.353769 after 12.02 seconds
+[0m19:21:33.357361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa59dfb3cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa557358c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa56cb763e0>]}
+[0m19:21:33.360543 [debug] [MainThread]: Flushing usage events
+[0m19:21:33.516559 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:39:04.914931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d4a893d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d492c3b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d4a6537c0>]}
+
+
+============================== 19:39:04.920684 | 898cc3c7-102b-4646-a5c9-6c68e2f296e5 ==============================
+[0m19:39:04.920684 [info ] [MainThread]: Running with dbt=1.12.4
+[0m19:39:04.922941 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'partial_parse': 'True', 'log_path': '/mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/logs', 'maximum_seed_size_mib': '1', 'use_colors': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run --select marts', 'printer_width': '80', 'warn_error': 'None', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'quiet': 'False', 'debug': 'False', 'cache_selected_only': 'False', 'write_json': 'True', 'introspect': 'True', 'profiles_dir': '/home/vrajadur/.dbt', 'empty': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m19:39:06.314905 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m19:39:06.317074 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m19:39:06.318968 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m19:39:06.641743 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '898cc3c7-102b-4646-a5c9-6c68e2f296e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d491d4be0>]}
+[0m19:39:06.737860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '898cc3c7-102b-4646-a5c9-6c68e2f296e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d4924b220>]}
+[0m19:39:06.741216 [info ] [MainThread]: Registered adapter: snowflake=1.12.0
+[0m19:39:06.911389 [debug] [MainThread]: checksum: 76e9f3de2815e4bbff53f790d6eafe9f8bf5540389b5c49f4182a44d3e6ceb64, vars: {}, profile: transform, target: dev, version: 1.12.4
+[0m19:39:07.050994 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m19:39:07.053340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '898cc3c7-102b-4646-a5c9-6c68e2f296e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d49fafc40>]}
+[0m19:39:09.297011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '898cc3c7-102b-4646-a5c9-6c68e2f296e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d197c6140>]}
+[0m19:39:09.498454 [debug] [MainThread]: Wrote artifact WritableManifest to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/manifest.json
+[0m19:39:09.509000 [debug] [MainThread]: Wrote artifact SemanticManifest to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/semantic_manifest.json
+[0m19:39:09.541457 [debug] [MainThread]: Wrote artifact OsiDocument to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/osi_document.json
+[0m19:39:09.564111 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '898cc3c7-102b-4646-a5c9-6c68e2f296e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d18188af0>]}
+[0m19:39:09.567141 [info ] [MainThread]: Found 7 models, 1 source, 545 macros
+[0m19:39:09.569627 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '898cc3c7-102b-4646-a5c9-6c68e2f296e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d1818ae00>]}
+[0m19:39:09.573759 [info ] [MainThread]: 
+[0m19:39:09.577151 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:39:09.579950 [info ] [MainThread]: 
+[0m19:39:09.583723 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m19:39:09.594411 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_REALTIME_DV_DB'
+[0m19:39:09.619595 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB"
+[0m19:39:09.622149 [debug] [ThreadPool]: On list_REALTIME_DV_DB: show terse schemas in database REALTIME_DV_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB"} */
+[0m19:39:09.624433 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:39:10.773932 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 1.149 seconds
+[0m19:39:10.777032 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_REALTIME_DV_DB, now create_REALTIME_DV_DB_STAGING_MARTS)
+[0m19:39:10.778593 [debug] [ThreadPool]: Creating schema "database: "REALTIME_DV_DB"
+schema: "STAGING_MARTS"
+"
+[0m19:39:10.784720 [debug] [ThreadPool]: Using snowflake connection "create_REALTIME_DV_DB_STAGING_MARTS"
+[0m19:39:10.786664 [debug] [ThreadPool]: On create_REALTIME_DV_DB_STAGING_MARTS: create schema if not exists REALTIME_DV_DB.STAGING_MARTS
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "create_REALTIME_DV_DB_STAGING_MARTS"} */
+[0m19:39:11.087912 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.300 seconds
+[0m19:39:11.099325 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_REALTIME_DV_DB_STAGING_MARTS, now list_REALTIME_DV_DB_STAGING_STAGING)
+[0m19:39:11.101473 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_REALTIME_DV_DB_STAGING_MARTS'
+[0m19:39:11.103881 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_REALTIME_DV_DB_STAGING_VAULT'
+[0m19:39:11.154243 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_MARTS"
+[0m19:39:11.151955 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_STAGING"
+[0m19:39:11.159589 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_VAULT"
+[0m19:39:11.162203 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_MARTS: show objects in REALTIME_DV_DB.STAGING_MARTS
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_MARTS"} */;
+[0m19:39:11.167216 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_STAGING: show objects in REALTIME_DV_DB.STAGING_STAGING
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_STAGING"} */;
+[0m19:39:11.170274 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_VAULT: show objects in REALTIME_DV_DB.STAGING_VAULT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_VAULT"} */;
+[0m19:39:11.172545 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:39:11.177566 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:39:11.466170 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.291 seconds
+[0m19:39:11.474628 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_STAGING"
+[0m19:39:11.476266 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_STAGING: show user functions in REALTIME_DV_DB.STAGING_STAGING
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_STAGING"} */
+[0m19:39:11.853042 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.375 seconds
+[0m19:39:11.957912 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.785 seconds
+[0m19:39:11.968846 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_MARTS"
+[0m19:39:11.971998 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_MARTS: show user functions in REALTIME_DV_DB.STAGING_MARTS
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_MARTS"} */
+[0m19:39:12.182574 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.208 seconds
+[0m19:39:12.204034 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1.027 seconds
+[0m19:39:12.208266 [debug] [ThreadPool]: Using snowflake connection "list_REALTIME_DV_DB_STAGING_VAULT"
+[0m19:39:12.209793 [debug] [ThreadPool]: On list_REALTIME_DV_DB_STAGING_VAULT: show user functions in REALTIME_DV_DB.STAGING_VAULT
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "connection_name": "list_REALTIME_DV_DB_STAGING_VAULT"} */
+[0m19:39:12.407803 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.197 seconds
+[0m19:39:12.411499 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '898cc3c7-102b-4646-a5c9-6c68e2f296e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d4c370d90>]}
+[0m19:39:12.418697 [debug] [Thread-2 (]: Began running node model.transform.dim_account
+[0m19:39:12.419298 [debug] [Thread-3 (]: Began running node model.transform.fact_trades
+[0m19:39:12.420811 [info ] [Thread-2 (]: 1 of 2 START sql table model STAGING_MARTS.dim_account ......................... [RUN]
+[0m19:39:12.422703 [info ] [Thread-3 (]: 2 of 2 START sql table model STAGING_MARTS.fact_trades ......................... [RUN]
+[0m19:39:12.424155 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_REALTIME_DV_DB_STAGING_VAULT, now model.transform.dim_account)
+[0m19:39:12.425620 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_REALTIME_DV_DB_STAGING_MARTS, now model.transform.fact_trades)
+[0m19:39:12.427038 [debug] [Thread-2 (]: Began compiling node model.transform.dim_account
+[0m19:39:12.428515 [debug] [Thread-3 (]: Began compiling node model.transform.fact_trades
+[0m19:39:12.437537 [debug] [Thread-2 (]: Writing injected SQL for node "model.transform.dim_account"
+[0m19:39:12.440890 [debug] [Thread-3 (]: Writing injected SQL for node "model.transform.fact_trades"
+[0m19:39:12.450771 [debug] [Thread-2 (]: Began executing node model.transform.dim_account
+[0m19:39:12.458695 [debug] [Thread-3 (]: Began executing node model.transform.fact_trades
+[0m19:39:12.521874 [debug] [Thread-3 (]: Writing runtime sql for node "model.transform.fact_trades"
+[0m19:39:12.523283 [debug] [Thread-2 (]: Writing runtime sql for node "model.transform.dim_account"
+[0m19:39:12.536130 [debug] [Thread-2 (]: Using snowflake connection "model.transform.dim_account"
+[0m19:39:12.538354 [debug] [Thread-2 (]: On model.transform.dim_account: create or replace transient table REALTIME_DV_DB.STAGING_MARTS.dim_account
+    
+    
+    
+    
+    
+
+    as (SELECT
+    hk_account_id       AS account_hk,
+    account_id          AS account_id,
+    load_timestamp      AS created_at,
+    record_source       AS record_source
+FROM REALTIME_DV_DB.STAGING_VAULT.hub_account
+    )
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.dim_account"} */;
+[0m19:39:12.540347 [debug] [Thread-3 (]: Using snowflake connection "model.transform.fact_trades"
+[0m19:39:12.544912 [debug] [Thread-3 (]: On model.transform.fact_trades: create or replace transient table REALTIME_DV_DB.STAGING_MARTS.fact_trades
+    
+    
+    
+    
+    
+
+    as (WITH link_ta AS (
+    SELECT 
+        hk_trade_account,
+        hk_trade_id,
+        hk_account_id
+    FROM REALTIME_DV_DB.STAGING_VAULT.link_trade_account
+),
+
+sat_trade AS (
+    SELECT 
+        hk_trade_id,
+        symbol,
+        order_type,
+        quantity,
+        price,
+        (quantity * price) AS total_trade_amount,
+        trade_timestamp,
+        load_timestamp
+    FROM REALTIME_DV_DB.STAGING_VAULT.sat_trade_details
+)
+
+SELECT
+    t.hk_trade_id                   AS trade_hk,
+    l.hk_account_id                 AS account_hk,
+    t.trade_id                      AS trade_id,
+    s.symbol                        AS symbol,
+    s.order_type                    AS order_type,
+    s.quantity                      AS quantity,
+    s.price                         AS unit_price,
+    s.total_trade_amount            AS total_trade_amount,
+    s.trade_timestamp               AS trade_timestamp,
+    s.load_timestamp                AS load_timestamp
+FROM REALTIME_DV_DB.STAGING_VAULT.hub_trade t
+INNER JOIN link_ta l 
+    ON t.hk_trade_id = l.hk_trade_id
+INNER JOIN sat_trade s 
+    ON t.hk_trade_id = s.hk_trade_id
+    )
+
+/* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "transform", "target_name": "dev", "node_id": "model.transform.fact_trades"} */;
+[0m19:39:14.235125 [debug] [Thread-2 (]: SQL status: SUCCESS 65 in 1.693 seconds
+[0m19:39:14.285196 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '898cc3c7-102b-4646-a5c9-6c68e2f296e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d492490c0>]}
+[0m19:39:14.288392 [info ] [Thread-2 (]: 1 of 2 OK created sql table model STAGING_MARTS.dim_account .................... [[32mSUCCESS 65[0m in 1.86s]
+[0m19:39:14.291652 [debug] [Thread-2 (]: Finished running node model.transform.dim_account
+[0m19:39:14.373574 [debug] [Thread-3 (]: SQL status: SUCCESS 80 in 1.827 seconds
+[0m19:39:14.378358 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '898cc3c7-102b-4646-a5c9-6c68e2f296e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757cf3097b20>]}
+[0m19:39:14.381014 [info ] [Thread-3 (]: 2 of 2 OK created sql table model STAGING_MARTS.fact_trades .................... [[32mSUCCESS 80[0m in 1.95s]
+[0m19:39:14.384445 [debug] [Thread-3 (]: Finished running node model.transform.fact_trades
+[0m19:39:14.388711 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:39:14.391084 [debug] [MainThread]: Connection 'list_REALTIME_DV_DB_STAGING_STAGING' was left open.
+[0m19:39:14.392918 [debug] [MainThread]: On list_REALTIME_DV_DB_STAGING_STAGING: Close
+[0m19:39:14.635842 [debug] [MainThread]: Connection 'model.transform.fact_trades' was left open.
+[0m19:39:14.638494 [debug] [MainThread]: On model.transform.fact_trades: Close
+[0m19:39:14.877102 [debug] [MainThread]: Connection 'model.transform.dim_account' was left open.
+[0m19:39:14.879357 [debug] [MainThread]: On model.transform.dim_account: Close
+[0m19:39:15.163764 [info ] [MainThread]: 
+[0m19:39:15.169650 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 5.58 seconds (5.58s).
+[0m19:39:15.175572 [debug] [MainThread]: Command end result
+[0m19:39:15.457858 [debug] [MainThread]: Wrote artifact WritableManifest to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/manifest.json
+[0m19:39:15.475161 [debug] [MainThread]: Wrote artifact SemanticManifest to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/semantic_manifest.json
+[0m19:39:15.492115 [debug] [MainThread]: Wrote artifact OsiDocument to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/osi_document.json
+[0m19:39:15.522638 [debug] [MainThread]: Wrote artifact RunExecutionResult to /mnt/c/Users/vrajadur/OneDrive/Projects/realtime-data-vault-engine/transform/target/run_results.json
+[0m19:39:15.525026 [info ] [MainThread]: 
+[0m19:39:15.533834 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:39:15.538349 [info ] [MainThread]: 
+[0m19:39:15.541684 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=2
+[0m19:39:15.547637 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 10.773122, "process_in_blocks": "532121", "process_kernel_time": 0.878804, "process_mem_max_rss": "244532", "process_out_blocks": "4928", "process_user_time": 7.485674}
+[0m19:39:15.553295 [debug] [MainThread]: Command `dbt run` succeeded at 19:39:15.552899 after 10.78 seconds
+[0m19:39:15.556445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d4a893d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d181c6440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x757d4924b220>]}
+[0m19:39:15.559803 [debug] [MainThread]: Flushing usage events
+[0m19:39:15.727939 [debug] [MainThread]: An error was encountered while trying to flush usage events

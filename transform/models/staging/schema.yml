@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_sources
+    database: REALTIME_DV_DB
+    schema: RAW
+    tables:
+      - name: RAW_FINANCIAL_TRADES
