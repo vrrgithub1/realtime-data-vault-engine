@@ -5,54 +5,64 @@ An enterprise-grade, end-to-end real-time data engineering pipeline built with *
 ## Architecture Overview
 
 ```mermaid
-graph LR
-    Producer["📊 Trade Event Producer<br/>(Python)"]
-    Kafka["🔄 Redpanda / Kafka<br/>(Message Broker)"]
-    Consumer["⚙️ Polars Micro-Batch<br/>Consumer"]
-    Snowflake_Raw["❄️ Snowflake RAW<br/>(Raw Data)"]
+graph TB
+    subgraph layer1["📊 Layer 1: Event Streaming"]
+        Producer["Trade Event Producer<br/>(Python)"]
+    end
     
-    dbt["🔧 dbt Data Vault 2.0<br/>(Transformations)"]
-    Hubs["🏠 Hubs<br/>HUB_TRADE, HUB_ACCOUNT"]
-    Links["🔗 Links<br/>LINK_TRADE_ACCOUNT"]
-    Sats["🛰️ Satellites<br/>SAT_TRADE_DETAILS"]
+    subgraph layer2["🔄 Layer 2: Message Broker"]
+        Kafka["Redpanda / Kafka<br/>(Message Broker)"]
+    end
     
-    Marts["⭐ Star Schema Marts<br/>(Dimensional Models)"]
-    Dim_Account["📈 dim_account"]
-    Fact_Trades["📊 fact_trades"]
+    subgraph layer3["⚙️ Layer 3: Data Ingestion"]
+        Consumer["Polars Micro-Batch<br/>Consumer"]
+    end
     
-    AI["🤖 LangChain AI Agent<br/>(Natural Language Queries)"]
+    subgraph layer4["❄️ Layer 4: Raw Data"]
+        Snowflake_Raw["Snowflake RAW<br/>(Raw Layer)"]
+    end
     
-    CI["🚀 GitHub Actions CI/CD<br/>(Automation)"]
+    subgraph layer5["🔧 Layer 5: Data Vault 2.0"]
+        Hubs["🏠 Hubs<br/>HUB_TRADE<br/>HUB_ACCOUNT"]
+        Links["🔗 Links<br/>LINK_TRADE_ACCOUNT"]
+        Sats["🛰️ Satellites<br/>SAT_TRADE_DETAILS"]
+    end
+    
+    subgraph layer6["⭐ Layer 6: Star Schema Marts"]
+        Dim["📈 dim_account"]
+        Fact["📊 fact_trades"]
+    end
+    
+    subgraph layer7["🤖 Layer 7: AI Query Engine"]
+        AI["LangChain AI Agent<br/>(Natural Language Queries)"]
+    end
+    
+    CI["🚀 GitHub Actions CI/CD"]
     
     Producer -->|Stream Events| Kafka
     Kafka -->|Consume| Consumer
     Consumer -->|Load| Snowflake_Raw
+    Snowflake_Raw --> Hubs
+    Snowflake_Raw --> Links
+    Snowflake_Raw --> Sats
+    Hubs --> Dim
+    Links --> Dim
+    Sats --> Dim
+    Hubs --> Fact
+    Links --> Fact
+    Sats --> Fact
+    Dim --> AI
+    Fact --> AI
     
-    Snowflake_Raw -->|Raw Data| dbt
-    dbt --> Hubs
-    dbt --> Links
-    dbt --> Sats
+    CI -.->|Automate| Snowflake_Raw
     
-    Hubs --> Marts
-    Links --> Marts
-    Sats --> Marts
-    
-    Marts --> Dim_Account
-    Marts --> Fact_Trades
-    
-    Dim_Account --> AI
-    Fact_Trades --> AI
-    
-    CI -.->|Triggers Builds & Tests| dbt
-    CI -.->|Monitors| Producer
-    
-    style Producer fill:#e1f5ff
-    style Kafka fill:#fff3e0
-    style Consumer fill:#f3e5f5
-    style Snowflake_Raw fill:#e0f2f1
-    style dbt fill:#fff9c4
-    style Marts fill:#f1f8e9
-    style AI fill:#fce4ec
+    style layer1 fill:#e1f5ff
+    style layer2 fill:#fff3e0
+    style layer3 fill:#f3e5f5
+    style layer4 fill:#e0f2f1
+    style layer5 fill:#fff9c4
+    style layer6 fill:#f1f8e9
+    style layer7 fill:#fce4ec
     style CI fill:#ede7f6
 ```
 ## Key Components
