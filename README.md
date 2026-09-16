@@ -1,8 +1,10 @@
-# Real-Time Financial Data Vault & AI Query Engine
+# Real-Time Financial Data Vault 2.0 & AST-Guarded AI Analytics Engine
 
-An enterprise-grade, end-to-end real-time data engineering pipeline built with **Kafka (Redpanda)**, **Python (Polars)**, **Snowflake**, **dbt**, **GitHub Actions CI/CD**, and **LangChain**.
+An enterprise-grade, end-to-end real-time financial data platform built with **Redpanda (Kafka)**, **Python (Polars)**, **Snowflake**, **dbt Data Vault 2.0**, **GitHub Actions CI/CD**, **LangChain**, and **sqlglot AST Validation**.
 
-## Architecture Overview
+---
+
+## 🏗️ Architecture Overview
 
 ```mermaid
 flowchart TD
@@ -16,64 +18,91 @@ flowchart TD
     classDef ai fill:#1e293b,stroke:#ec4899,stroke-width:2px,color:#fff
     classDef cicd fill:#1e293b,stroke:#64748b,stroke-dasharray: 5 5,color:#fff
 
-    %% Event Streaming & Ingestion
-    subgraph StreamLayer ["1. Streaming & Ingestion"]
-        P["Trade Event Producer<br/>(Python)"]:::producer -->|Stream Events| B["Redpanda / Kafka<br/>(Message Broker)"]:::broker
-        B -->|Consume| C["Polars Micro-Batch<br/>Consumer"]:::ingestion
-    end
+    %% Nodes & Connections
+    PRODUCER["Trade Event Producer<br/>(Python)"]:::producer -->|Stream Events| BROKER["Redpanda / Kafka<br/>(Message Broker)"]:::broker
+    BROKER -->|Consume| CONSUMER["Polars Micro-Batch<br/>Consumer"]:::ingestion
+    
+    CONSUMER -->|Load JSON| RAW["Snowflake RAW Layer"]:::raw
+    RAW -->|dbt stage & hash| DV["dbt Data Vault 2.0"]:::dv
+    DV -->|Dimensional Models| MARTS["Star Marts<br/>(fact_trades / dim_account)"]:::mart
+    
+    APP["Streamlit AI Web App"]:::ai -->|Submit Prompt| AST["AST Validation Gate<br/>(sqlglot AST Guard)"]:::ai
+    RAW -->|Schema Metadata| AST
+    MARTS -->|Validated Query Output| AST
+    
+    CICD["GitHub Actions CI/CD"]:::cicd -.-|Automated via| DV
+```
+---
 
-    %% Snowflake Platform
-    subgraph Snowflake ["2. Snowflake Data Platform (REALTIME_DV_DB)"]
-        C -->|Load JSON| RAW["RAW.RAW_FINANCIAL_TRADES"]:::raw
-        
-        subgraph Vault ["Data Vault 2.0 (VAULT)"]
-            RAW -->|dbt stage & hash| STG["stg_financial_trades"]:::raw
-            STG --> HUBS["Hubs<br/>(HUB_TRADE / HUB_ACCOUNT)"]:::dv
-            STG --> LINKS["Links<br/>(LINK_TRADE_ACCOUNT)"]:::dv
-            STG --> SATS["Satellites<br/>(SAT_TRADE_DETAILS)"]:::dv
-        end
-        
-        subgraph Marts ["Star Schema Marts (MARTS)"]
-            HUBS -->|account_id| DIM["dim_account"]:::mart
-            HUBS -->|trade_id| FACT["fact_trades"]:::mart
-            LINKS -->|hk_trade_account| FACT
-            SATS -->|trade metrics| FACT
-        end
-    end
+## 🔑 Key Features & Pipeline Phases
 
-    %% Downstream & CI/CD
-    subgraph AI ["3. Consumption Layer"]
-        DIM --> AGENT["LangChain AI Agent<br/>(Text-to-SQL Analytics)"]:::ai
-        FACT --> AGENT
-    end
+### 1. Real-Time Streaming & High-Throughput Ingestion
+* **Message Broker**: Synthetic financial trade producer emitting JSON streams to Redpanda (Kafka).
+* **Polars Micro-Batch Consumer**: Micro-batching consumer writing payloads directly into Snowflake landing tables (`RAW.RAW_FINANCIAL_TRADES`).
 
-    CICD["GitHub Actions CI/CD<br/>(dbt run & dbt test)"]:::cicd -.-|Automates Transformations| Vault
+### 2. Data Vault 2.0 & Information Marts (dbt + Snowflake)
+* **Deterministic Hashing**: `dbt-snowflake` incremental models generating MD5 hash keys (`hk_trade_id`, `hk_account_id`) across Hubs, Links, and Satellites without sequence lockups.
+* **Dimensional Marts**: High-performance Star Schema layer (`dim_account`, `fact_trades`) decoupling raw auditability from consumer analytics.
+
+### 3. Production DevOps & Quality Assurance
+* **Automated CI/CD**: GitHub Actions workflow executing `dbt debug`, `dbt run`, and `dbt test` assertions automatically on pull requests using repository secrets.
+
+### 4. AI Integration & AST Safety Audit Gate
+* **Text-to-SQL Agent**: LangChain agent translating natural language analytical prompts into valid Snowflake SQL.
+* **3-Tier AST Safety Gate (`sqlglot`)**: Static AST parsing intercepting queries before execution to enforce:
+  * Rejection of DDL/DML mutations (`DROP`, `DELETE`, `UPDATE`, `ALTER`, `TRUNCATE`).
+  * Schema access control restricting queries to `STAGING_MARTS`.
+  * Automatic `LIMIT` injection for query cost governance.
+
+---
+
+## 📁 Repository Structure
+
+```text
+realtime-data-vault-engine/
+├── consumers/                       # High-throughput Polars streaming consumers
+│   └── snowflake_stream_consumer.py
+├── docker/                          # Container orchestration (Redpanda / Kafka)
+│   └── docker-compose.yml
+├── .github/workflows/               # CI/CD workflows
+│   └── dbt_ci.yml
+├── scripts/                         # Operational & AI scripts
+│   ├── ai_sql_agent.py              # CLI Text-to-SQL agent
+│   ├── sql_validator.py             # sqlglot AST security parser
+│   └── app.py                       # Streamlit web interface
+├── transform/                       # Complete dbt Data Vault & Marts project
+│   ├── models/
+│   │   ├── staging/
+│   │   ├── vault/
+│   │   └── marts/
+│   └── dbt_project.yml
+└── README.md
+
+## 🚀 Quickstart Guide
+
+### 1. Prerequisites & Environment Setup
+
+```bash
+# Clone Repository
+git clone [https://github.com/vrrgithub1/realtime-data-vault-engine.git](https://github.com/vrrgithub1/realtime-data-vault-engine.git)
+cd realtime-data-vault-engine
+
+# Activate Conda Environment & Install Dependencies
+conda activate realtime-vault-u
+pip install -r requirements.txt
 ```
 
-## Key Components
+### 2. Launch Ingestion Pipeline
 
-1. **Event Streaming**: Python producer emitting streaming stock trade events to a Redpanda (Kafka) topic.
-2. **High-Throughput Ingestion**: Python + Polars micro-batch consumer writing JSON payloads to Snowflake (`RAW.RAW_FINANCIAL_TRADES`).
-3. **Data Vault 2.0 Modeling**: `dbt-snowflake` incremental models building deterministic MD5 Hash Keys across:
-   - **Hubs**: `HUB_TRADE`, `HUB_ACCOUNT`
-   - **Links**: `LINK_TRADE_ACCOUNT`
-   - **Satellites**: `SAT_TRADE_DETAILS`
-4. **Dimensional Information Marts**: Star Schema modeling producing `dim_account` and `fact_trades` for high-performance analytical queries.
-5. **Continuous Integration (CI/CD)**: Automated GitHub Actions workflow testing connection health (`dbt debug`), executing transformations (`dbt run`), and running quality assertions (`dbt test`).
-6. **AI Integration**: LangChain Text-to-SQL agent enabling natural language queries directly over the Snowflake Star Schema.
-
-## How to Run
-
-### 1. Ingestion Pipeline
-```bash
+```Bash
 # Start Redpanda Broker
 docker compose -f docker/docker-compose.yml up -d
 
-# Start Ingestion Consumer
+# Run Micro-Batch Consumer
 python consumers/snowflake_stream_consumer.py
 ```
 
-### 2. dbt Transformations
+### 3. Execute dbt Transformations
 
 ```Bash
 cd transform
@@ -81,9 +110,9 @@ dbt run
 dbt test
 ```
 
-### 3. AI Agent Interface
+### 4. Launch AI Web Interface with AST Guardrails
 
 ```Bash
-python scripts/ai_sql_agent.py
+cd scripts
+streamlit run app.py
 ```
-
