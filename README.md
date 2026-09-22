@@ -77,6 +77,23 @@ realtime-data-vault-engine/
 │   │   └── marts/
 │   └── dbt_project.yml
 └── README.md
+```
+
+## Configuration
+
+Create a `.env` file in the project root with the credentials required by the Snowflake consumer and AI analytics app:
+
+```dotenv
+SNOWFLAKE_ACCOUNT=<your-snowflake-account>
+SNOWFLAKE_USER=<your-snowflake-user>
+SNOWFLAKE_PASSWORD=<your-snowflake-password>
+SNOWFLAKE_WAREHOUSE=REALTIME_DV_WH
+SNOWFLAKE_DATABASE=REALTIME_DV_DB
+SNOWFLAKE_SCHEMA=STAGING_MARTS
+OPENAI_API_KEY=<your-openai-api-key>
+```
+
+Keep `.env` out of version control and use secret storage for deployed environments.
 
 ## 🚀 Quickstart Guide
 
@@ -116,3 +133,7 @@ dbt test
 cd scripts
 streamlit run app.py
 ```
+
+## Medium Publication
+
+[From Streaming Trade Data to AI-Powered Analytics: An End-to-End Data Vault 2.0 Architecture](https://medium.com/@vrrajadurai/from-streaming-trade-data-to-ai-powered-analytics-an-end-to-end-data-vault-2-0-architecture-f906d952674f?sharedUserId=vrrajadurai)

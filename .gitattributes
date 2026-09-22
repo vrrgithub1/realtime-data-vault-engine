@@ -1,0 +1,14 @@
+# GitHub Linguist language classification
+*.py linguist-language=Python
+*.sql linguist-language=SQL
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.md linguist-language=Markdown
+*.json linguist-language=JSON
+*.dockerfile linguist-language=Dockerfile
+Dockerfile linguist-language=Dockerfile
+
+# Exclude generated dbt artifacts and logs from language statistics
+transform/target/** linguist-generated=true
+logs/** linguist-generated=true
+transform/logs/** linguist-generated=true

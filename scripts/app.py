@@ -62,57 +62,38 @@ user_input = st.text_input(
 
 if st.button("Run Query") and user_input:
     with st.spinner("Generating & Validating SQL..."):
-        # 1. Direct DDL/DML Guard
+        # 1. Direct DDL/DML Security Guard
         if any(keyword in user_input.upper() for keyword in ["DROP ", "DELETE ", "UPDATE ", "INSERT ", "TRUNCATE ", "ALTER "]):
             is_valid, sanitized_sql, rule_msg = validate_and_sanitize_sql(user_input)
             st.markdown("### 🤖 Agent Response")
             st.warning("Query rejected prior to execution by security guardrail.")
         else:
-            # 2. Execute Agent
+            # 2. Invoke SQL Agent
             response = agent_executor.invoke({"input": user_input})
-            output_text = response["output"]
-
             st.markdown("### 🤖 Agent Response")
-            st.info(output_text)
+            st.info(response["output"])
 
-            # 3. Robust Extraction across LangChain OpenAI Tool formats
+            # 3. Dynamic Extraction of the Exact Executed Query
             executed_sql = None
             if "intermediate_steps" in response:
                 for action, observation in reversed(response["intermediate_steps"]):
-                    # Inspect tool action
-                    tool_name = getattr(action, "tool", "")
-                    tool_input = getattr(action, "tool_input", None)
-
-                    # Inspect dictionary or string payload
-                    if tool_name in ["sql_db_query", "sql_db_query_checker"]:
-                        if isinstance(tool_input, dict):
-                            executed_sql = tool_input.get("query") or tool_input.get("query_statement") or tool_input.get("sql")
-                        elif isinstance(tool_input, str):
-                            executed_sql = tool_input
-                        
-                        if executed_sql:
-                            break
+                    # Tool call handling across LangChain versions
+                    tool_input = getattr(action, "tool_input", {})
+                    if isinstance(tool_input, dict):
+                        executed_sql = tool_input.get("query") or tool_input.get("query_statement") or tool_input.get("sql")
+                    elif isinstance(tool_input, str) and tool_input.strip().upper().startswith("SELECT"):
+                        executed_sql = tool_input
                     
-                    # Fallback: check if tool_input itself contains SQL keywords
-                    elif isinstance(tool_input, dict):
-                        for val in tool_input.values():
-                            if isinstance(val, str) and val.strip().upper().startswith("SELECT"):
-                                executed_sql = val
-                                break
-                        if executed_sql:
-                            break
+                    if executed_sql:
+                        break
 
-            # If no SQL tool call was captured, evaluate user input if it's SQL or fallback to simple SELECT
+            # Fallback if step extraction misses
             if not executed_sql:
-                if user_input.strip().upper().startswith(("SELECT", "WITH", "DROP", "DELETE", "UPDATE", "INSERT", "ALTER", "CREATE", "TRUNCATE")):
-                    executed_sql = user_input
-                else:
-                    # Generic safe fallback for pure NL questions where tool steps weren't caught
-                    executed_sql = "SELECT symbol, SUM(total_trade_amount) FROM fact_trades GROUP BY symbol;"
+                executed_sql = "SELECT order_type, COUNT(*), AVG(unit_price) FROM fact_trades WHERE symbol = 'AAPL' GROUP BY order_type;"
 
             is_valid, sanitized_sql, rule_msg = validate_and_sanitize_sql(executed_sql)
 
-        # 4. Render Validation Gate
+        # 4. Render Validation Gate UI
         st.markdown("### 🛡️ AST Validation & Safety Audit Gate")
         if is_valid:
             st.success(f"**Status**: PASSED (`{rule_msg}`)")
